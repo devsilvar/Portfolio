@@ -190,11 +190,15 @@ const Training = () => {
 
       <div className='app__training-flyer'>
         <motion.div whileHover={{ scale: 1.02 }} className='flyer-container'>
-          <img src={fullStack} alt='Training Program Flyer' />
-          <div className='flyer-overlay'>
+          <img
+            src={fullStack}
+            alt='Training Program Flyer'
+            style={{ height: '400px', width: '100%' }}
+          />
+          {/* <div className='flyer-overlay'>
             <h3>Download Program Brochure</h3>
             <button className='download-button'>PDF Version</button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
 
