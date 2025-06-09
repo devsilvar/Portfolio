@@ -1,0 +1,734 @@
+.app__training {
+    flex: 1;
+    width: 100%;
+    padding-top: 5rem;
+    flex-direction: column;
+}
+
+/* Training Flyer Styles */
+.app__training-flyer {
+    width: 100%;
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+
+    .flyer-container {
+        position: relative;
+        max-width: 800px;
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .flyer-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 2rem;
+            color: white;
+            text-align: center;
+
+            h3 {
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .download-button {
+                background: var(--secondary-color);
+                color: white;
+                border: none;
+                padding: 0.75rem 2rem;
+                border-radius: 50px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+                }
+            }
+        }
+    }
+}
+
+/* Pricing Section Styles */
+.app__training-pricing {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 0 1rem;
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: #131212;
+        margin-bottom: 3rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .pricing-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 16px;
+        padding: 2rem;
+        position: relative;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        &.popular {
+            border: 2px solid var(--secondary-color);
+            transform: translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        h4 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .duration {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            margin: 2rem 0;
+            padding-left: 1rem;
+
+            li {
+                color: #4a5568;
+                margin-bottom: 0.75rem;
+                font-size: 0.95rem;
+                position: relative;
+                padding-left: 1.5rem;
+
+                &::before {
+                    content: '✓';
+                    color: var(--secondary-color);
+                    position: absolute;
+                    left: 0;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .pricing-button {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.primary {
+                background: var(--secondary-color);
+                color: white;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+                }
+            }
+
+            &.secondary {
+                background: rgba(255, 255, 255, 0.9);
+                border: 2px solid var(--secondary-color);
+                color: var(--secondary-color);
+
+                &:hover {
+                    background: var(--secondary-color);
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .payment-options {
+        text-align: center;
+        margin-top: 3rem;
+        color: rgba(22, 22, 22, 0.8);
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-button {
+            background: transparent;
+            color: black;
+            border: 2px solid white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: white;
+                color: var(--secondary-color);
+            }
+        }
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .app__training-flyer {
+        margin: 2rem 0;
+
+        .flyer-overlay {
+            padding: 1rem !important;
+
+            h3 {
+                font-size: 1.2rem !important;
+            }
+        }
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .pricing-card {
+        &.popular {
+            transform: none !important;
+        }
+    }
+}
+
+.training-subtitle {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.app__training-overview {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.training-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    border-radius: 20px;
+    padding: 3rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    .stat-item {
+        text-align: center;
+        color: black;
+        min-width: 140px;
+
+        h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+            color: black;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, var(--secondary-color), #2e2ee7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 600;
+            color: black;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        gap: 2rem;
+        padding: 2rem;
+
+        .stat-item {
+            min-width: 120px;
+
+            h3 {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+.app__training-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4rem 0 2rem;
+
+    .app__training-filter-item {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        color: #000;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0.5rem;
+
+        &:hover {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+
+        @media screen and (min-width: 2000px) {
+            padding: 1rem 2rem;
+            border-radius: 0.85rem;
+        }
+    }
+
+    .item-active {
+        background-color: var(--secondary-color);
+        color: #fff;
+    }
+}
+
+.app__training-modules {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+
+    .app__training-item {
+        width: 350px;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 1rem;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        @media screen and (min-width: 2000px) {
+            width: 450px;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            margin: 0 1rem;
+        }
+    }
+}
+
+.app__training-header {
+    width: 100%;
+    background: linear-gradient(135deg, var(--secondary-color), #667eea);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .training-icon {
+        font-size: 3rem;
+        color: #fff;
+        opacity: 0.9;
+    }
+
+    .training-duration {
+        .duration-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.app__training-content {
+    padding: 2rem;
+
+    h4 {
+        color: #333;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .p-text {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .training-skills {
+        margin-top: 1.5rem;
+
+        .skills-title {
+            color: #333;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.tags {
+    background-color: #ffc70ffd;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 19px;
+    font-size: 0.75rem;
+    margin: 4px;
+    font-weight: 500;
+}
+
+.flex__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+}
+
+.app__ai-tools-section {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .ai-tools-grid {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        .ai-tool-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            max-width: 280px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background: #fff;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            .tool-icon {
+                font-size: 3rem;
+                color: var(--secondary-color);
+                margin-bottom: 1.5rem;
+            }
+
+            h4 {
+                color: #333;
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                font-weight: 700;
+            }
+
+            .p-text {
+                color: #666;
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .ai-tool-card {
+                max-width: 100%;
+                margin: 0 1rem;
+            }
+        }
+    }
+}
+
+.app__portfolio-projects {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+    .section-title {
+        text-align: center;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .project-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+            &:hover {
+                box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+                transform: translateY(-8px);
+            }
+
+            .project-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1.5rem;
+
+                .project-icon {
+                    font-size: 2rem;
+                    color: var(--secondary-color);
+                    margin-right: 1rem;
+                }
+
+                h4 {
+                    color: #333;
+                    margin: 0;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                }
+            }
+
+            .p-text {
+                color: #666;
+                margin-bottom: 1.5rem;
+                line-height: 1.6;
+                font-size: 1rem;
+            }
+
+            .project-tech {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
+
+                .tech-tag {
+                    background: linear-gradient(135deg, var(--secondary-color), #667eea);
+                    color: #fff;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            margin: 0 1rem;
+            gap: 2rem;
+        }
+    }
+}
+
+.app__training-highlights {
+    width: 100%;
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+
+    .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background: #fff;
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+            h4 {
+                color: #333;
+                margin-bottom: 1.5rem;
+                font-size: 1.4rem;
+                font-weight: 700;
+            }
+
+            .p-text {
+                color: #666;
+                line-height: 1.7;
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            margin: 0 1rem;
+            gap: 2rem;
+        }
+    }
+}
+
+.app__training-cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+
+    .cta-card {
+        background: linear-gradient(135deg, var(--secondary-color), #667eea);
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        max-width: 600px;
+        color: #fff;
+
+        h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .p-text {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.primary {
+                background: #fff;
+                color: var(--secondary-color);
+
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            &.secondary {
+                background: transparent;
+                color: #fff;
+                border: 2px solid #fff;
+
+                &:hover {
+                    background: #fff;
+                    color: var(--secondary-color);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            margin: 0 1rem;
+            padding: 2rem;
+
+            h3 {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

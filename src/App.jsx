@@ -1,20 +1,21 @@
-import { useState } from "react";
-import { About, Footer, Header, Testimonial, Work, Skills } from "./Container";
-import { Navbar } from "./Components";
-import SmallScreenFooter from "./Container/Footer/SmallScreenFooter";
-import "./App.scss";
+import { useState } from 'react';
+import { Navbar } from './Components';
+import { Footer } from './Container';
+import SmallScreenFooter from './Container/Footer/SmallScreenFooter';
+import './App.scss';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Course from './Pages/Course';
 
 function App() {
   return (
     <>
-      <div className="app">
+      <div className='app'>
         <Navbar />
-        <Header />
-        <About />
-        <Work />
-        <Skills />
-        <Testimonial />
-        <Footer />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/course' element={<Course />} />
+        </Routes>
         <SmallScreenFooter />
       </div>
     </>
